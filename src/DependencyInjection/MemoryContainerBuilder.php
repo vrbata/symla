@@ -81,7 +81,7 @@ class MemoryContainerBuilder implements ContainerBuilder
 
     protected function getContainerLoader(SymfonyContainerBuilder $container)
     {
-        $locator  = new FileLocator($this);
+        $locator  = new FileLocator();
         $resolver = new LoaderResolver([
             new XmlFileLoader($container, $locator),
             new YamlFileLoader($container, $locator),
