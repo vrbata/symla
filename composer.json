@@ -15,7 +15,8 @@
   },
   "require": {
     "symla/cli": "^1.0",
-    "symfony/http-kernel": "^3.1"
+    "symfony/http-kernel": "^3.1",
+    "symfony/config": "^3.1"
   },
   "require-dev": {
     "tracy/tracy": "^2.3"
