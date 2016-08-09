@@ -1,0 +1,22 @@
+{
+  "name": "symla/joomla-bridge",
+  "description": "Symfony in Joomla",
+  "keywords": ["joomla", "symfony"],
+  "authors": [
+    {
+      "name": "Josef Vrbata",
+      "email": "vrbata.josef@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Symla\\": "src"
+    }
+  },
+  "require": {
+    "symla/cli": "^1.0"
+  },
+  "require-dev": {
+    "tracy/tracy": "^2.3"
+  }
+}
