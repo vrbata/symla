@@ -67,8 +67,7 @@ class Application
 
     protected function buildContainer()
     {
-        $builder = new CachingContainerBuilder(new MemoryContainerBuilder($this->environment()), $this->environment());
-
+        $builder         = new CachingContainerBuilder(new MemoryContainerBuilder($this->environment()), $this->environment());
         $this->container = $builder->build();
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Symla\Joomla\DependencyInjection;
 
+use Symfony\Component\DependencyInjection\Container;
+
 interface ContainerBuilder
 {
     /**
@@ -9,4 +11,6 @@ interface ContainerBuilder
      */
 
     public function build();
+
+    public function registerDynamicServices(Container $container);
 }

@@ -3,6 +3,7 @@
 namespace Symla\Joomla\DependencyInjection;
 
 use Symfony\Component\Config\ConfigCache;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerBuilder as SymfonyContainerBuilder;
 use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 use Symla\Joomla\Environment\Environment;
@@ -42,7 +43,16 @@ class CachingContainerBuilder implements ContainerBuilder
 
         require_once $path;
 
-        return new $class();
+        $container = new $class();
+
+        $this->registerDynamicServices($container);
+
+        return $container;
+    }
+
+    public function registerDynamicServices(Container $container)
+    {
+        $this->containerBuilder->registerDynamicServices($container);
     }
 
     private function dumpContainer(ConfigCache $cache, SymfonyContainerBuilder $container, $class, $baseClass)
